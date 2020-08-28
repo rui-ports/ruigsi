@@ -34,7 +34,7 @@ jobs:
          run: |
              java -jar BoboBot.jar
          
-       - name: Add values
+       - name: Add value
          run: |
              rm -rf configs/config.prop
              cd configs
