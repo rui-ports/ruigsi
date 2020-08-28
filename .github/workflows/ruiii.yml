@@ -15,6 +15,7 @@ jobs:
          uses: actions/checkout@master
          
        - name: Initializing environments
+         continue-on-error: true
          timeout-minutes: 5
          run: |
             sudo -E apt-get -qq update
@@ -22,6 +23,7 @@ jobs:
             sudo -E apt-get install expect
 
        - name: Setup 2.00 and seda
+         continue-on-error: true
          timeout-minutes: 3
          run: |
             git clone --recurse-submodules https://${{ secrets.EMAIL }}":${{ secrets.PASSWORD }}"@github.com/rui-ports/ErfanGSIs.git
@@ -29,16 +31,19 @@ jobs:
             sudo bash ErfanGSIs/setup.sh
             
        - name: Download BoboBot sources
+         continue-on-error: true
          timeout-minutes: 5
          run: |
             sudo aria2c http://tdrive.manofuranium.workers.dev/BoboBot.jar
 
        - name: Generate value
+         continue-on-error: true
          timeout-minutes: 3
          run: |
              java -jar BoboBot.jar
          
        - name: Add value
+         continue-on-error: true
          timeout-minutes: 1
          run: |
              rm -rf configs/config.prop
@@ -51,10 +56,12 @@ jobs:
              echo "bot-master=${{ secrets.USERKEY }}" >> "config.prop"
              
        - name: Run bobobot
+         continue-on-error: true
          timeout-minutes: 1
          run: sudo java -jar BoboBot.jar
          
        - name: Test
+         continue-on-error: true
          timeout-minutes: 1
          run: |
               mkdir lol
