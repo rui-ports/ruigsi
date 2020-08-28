@@ -61,7 +61,7 @@ jobs:
              
        - name: Run bobobot
          continue-on-error: true
-         timeout-minutes: 340
+         timeout-minutes: 1
          run: sudo java -jar BoboBot.jar
          
        - name: Test
