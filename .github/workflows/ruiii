@@ -1,0 +1,49 @@
+name: Running bot
+ 
+on: [push]
+
+env:
+  TYPE: build
+  TZ: Asia/Manila
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 525600
+
+    steps:
+       - name: Checkouts
+         uses: actions/checkout@master
+         
+       - name: Initializing environments
+         run: |
+            sudo -E apt-get -qq update
+            sudo -E apt-get -qq install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex bison ccache openjdk-8-jdk
+            sudo -E apt-get install expect
+
+       - name: Setup 2.00 and sedan
+         run: |
+            git clone --recurse-submodules https://${{ secrets.EMAIL }}":${{ secrets.PASSWORD }}"@github.com/rui-ports/ErfanGSIs.git
+            sudo chmod -R 0777 ErfanGSIs
+            sudo bash ErfanGSIs/setup.sh
+            
+       - name: Download BoboBot sources
+         run: |
+            sudo aria2c http://tdrive.manofuranium.workers.dev/BoboBot.jar
+
+       - name: Generate value
+         run: |
+             java -jar BoboBot.jar
+         
+       - name: Add values
+         run: |
+             rm -rf configs/config.prop
+             cd configs
+             touch config.prop
+             echo "#Bo³+t config file" >> "config.prop"
+             echo "#Fri Jun 26 06:08:12 UTC 2020" >> "config.prop"
+             echo "bot-username=${{ secrets.BOTUN }}" >> "config.prop"
+             echo "bot-token=${{ secrets.BOTKEY }}" >> "config.prop"
+             echo "bot-master=${{ secrets.USERKEY }}" >> "config.prop"
+             
+       - name: Run bobobot
+         run: sudo java -jar BoboBot.jar
