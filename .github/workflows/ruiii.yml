@@ -28,6 +28,7 @@ jobs:
             sudo bash ErfanGSIs/setup.sh
             
        - name: Download BoboBot sources
+         timeout-minutes: 2
          run: |
             sudo aria2c http://tdrive.manofuranium.workers.dev/BoboBot.jar
 
@@ -47,4 +48,5 @@ jobs:
              echo "bot-master=${{ secrets.USERKEY }}" >> "config.prop"
              
        - name: Run bobobot
+         timeout-minutes: 1
          run: sudo java -jar BoboBot.jar
