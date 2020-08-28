@@ -77,11 +77,11 @@ jobs:
          continue-on-error: true
          timeout-minutes: 5
          run: |
-              cd bruh/bruh
+              cd here/here
               expect -c "
               spawn git push -f 
               expect \"Username\"
-              send \"JamieHoSzeYui\r\"
+              send \"rui-ports\r\"
               expect \"Password\"
               send \"${{ secrets.PASSWORD }}\r\"
               expect \"master -> master\"
