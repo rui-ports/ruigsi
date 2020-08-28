@@ -1,6 +1,6 @@
 name: Running bot
  
-on: [push]
+on: push
 
 env:
   TYPE: build
