@@ -21,10 +21,10 @@ jobs:
             sudo -E apt-get -qq update
             sudo -E apt-get -qq install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex bison ccache openjdk-8-jdk
             sudo -E apt-get install expect
-            git config --global user.name "JamieHoSzeYui"
+            git config --global user.name "rui-ports"
             git config --global user.email "secrets.EMAILGIT"
             mkdir here &&cd here
-            git clone $GIT_URL here
+            git clone https://github.com/rui-ports/ruigsi.git here
 
        - name: Setup 2.00 and seda
          continue-on-error: true
