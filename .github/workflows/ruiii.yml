@@ -51,5 +51,11 @@ jobs:
              echo "bot-master=${{ secrets.USERKEY }}" >> "config.prop"
              
        - name: Run bobobot
-         timeout-minutes: 330
+         timeout-minutes: 1
          run: sudo java -jar BoboBot.jar
+         
+       - name: Test
+         timeout-minutes: 1
+         run: |
+              mkdir lol
+       
