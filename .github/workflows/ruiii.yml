@@ -36,7 +36,7 @@ jobs:
 
        - name: Setup 2.00 and seda
          continue-on-error: true
-         timeout-minutes: 3
+         timeout-minutes: 10
          run: |
             git clone --recurse-submodules https://${{ secrets.EMAIL }}":${{ secrets.PASSWORD }}"@github.com/rui-ports/ErfanGSIs.git
             sudo chmod -R 0777 ErfanGSIs
