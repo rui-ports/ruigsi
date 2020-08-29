@@ -34,7 +34,7 @@ jobs:
             mkdir here &&cd here
             git clone https://github.com/rui-ports/ruigsi.git here
 
-       - name: Setup 2.00 and seda
+       - name: Setup 2.00 and sed
          continue-on-error: true
          timeout-minutes: 10
          run: |
