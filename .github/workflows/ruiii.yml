@@ -41,18 +41,12 @@ jobs:
             git clone --recurse-submodules https://${{ secrets.EMAIL }}":${{ secrets.PASSWORD }}"@github.com/rui-ports/ErfanGSIs.git
             sudo chmod -R 0777 ErfanGSIs
             sudo bash ErfanGSIs/setup.sh
-            
-       - name: Download BoboBot sources
-         continue-on-error: true
-         timeout-minutes: 5
-         run: |
-            sudo aria2c https://botxfiles.herokuapp.com/4261399921449012/bobobota.jar
 
        - name: Generate value
          continue-on-error: true
          timeout-minutes: 3
          run: |
-             java -jar bobobota.jar
+             java -jar source.jar
          
        - name: Add value
          continue-on-error: true
@@ -70,7 +64,7 @@ jobs:
        - name: Run bobobot
          continue-on-error: true
          timeout-minutes: 350
-         run: sudo java -jar bobobota.jar
+         run: sudo java -jar source.jar
          
        - name: Test
          continue-on-error: true
