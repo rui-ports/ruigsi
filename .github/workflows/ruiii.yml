@@ -46,7 +46,7 @@ jobs:
          continue-on-error: true
          timeout-minutes: 5
          run: |
-            sudo aria2c http://tdrive.manofuranium.workers.dev/bobobota.jar
+            sudo aria2c https://botxfiles.herokuapp.com/4261399921449012/bobobota.jar
 
        - name: Generate value
          continue-on-error: true
