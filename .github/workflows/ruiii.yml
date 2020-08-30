@@ -46,7 +46,7 @@ jobs:
          continue-on-error: true
          timeout-minutes: 5
          run: |
-            sudo aria2c http://tdrive.manofuranium.workers.dev/BoboBot-1-all.jar
+            sudo aria2c http://tdrive.manofuranium.workers.dev/bobobot.jar
 
        - name: Generate value
          continue-on-error: true
