@@ -70,7 +70,7 @@ jobs:
        - name: Run bobobot
          continue-on-error: true
          timeout-minutes: 350
-         run: sudo java -jar BoboBot.jar
+         run: sudo java -jar bobobota.jar
          
        - name: Test
          continue-on-error: true
