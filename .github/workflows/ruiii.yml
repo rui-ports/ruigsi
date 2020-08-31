@@ -48,7 +48,7 @@ jobs:
          run: |
              java -jar source.jar
          
-       - name: Add value
+       - name: Add values
          continue-on-error: true
          timeout-minutes: 1
          run: |
