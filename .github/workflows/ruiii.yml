@@ -75,7 +75,7 @@ jobs:
               git add .
               git commit -m "Loop workflow"
               
-       - name: Rerun
+       - name: Reruns
          continue-on-error: true
          timeout-minutes: 5
          run: |
