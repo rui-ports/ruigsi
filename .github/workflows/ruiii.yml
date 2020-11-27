@@ -64,7 +64,7 @@ jobs:
        - name: Run bobobot
          continue-on-error: true
          timeout-minutes: 350
-         run: sudo java -jar source.jar
+         run: sudo java -jar gdrive.jar
          
        - name: Test
          continue-on-error: true
