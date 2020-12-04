@@ -73,7 +73,7 @@ jobs:
               cd hehehe/hehehe
               echo "1" >> push.txt
               git add .
-              git commit -m "Loop workflow"
+              git commit -m "Loopy workflow"
               
        - name: Reruns
          continue-on-error: true
