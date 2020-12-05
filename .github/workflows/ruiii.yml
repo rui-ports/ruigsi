@@ -44,9 +44,9 @@ jobs:
 
        - name: Generate value
          continue-on-error: true
-         timeout-minutes: 3
+         timeout-minutes: 1
          run: |
-             java -jar finalig.jar
+             java -jar gdrive.jar
          
        - name: Add values
          continue-on-error: true
@@ -63,7 +63,7 @@ jobs:
              
        - name: Run bobobot
          continue-on-error: true
-         timeout-minutes: 350
+         timeout-minutes: 340
          run: sudo java -jar finalig.jar
          
        - name: Test
