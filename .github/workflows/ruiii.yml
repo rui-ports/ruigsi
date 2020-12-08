@@ -18,12 +18,10 @@ jobs:
          continue-on-error: true
          timeout-minutes: 100
          run: |
-            sudo apt-get -qq install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex bison ccache openjdk-8-jdk
             sudo apt-get install expect
             docker rmi `docker images -q`
             sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
             sudo apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* 
-            sudo -E apt-get update
             sudo apt-get autoremove
             sudo apt-get -y autoremove --purge
             sudo apt-get clean 
