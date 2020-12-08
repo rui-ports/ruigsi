@@ -18,7 +18,6 @@ jobs:
          continue-on-error: true
          timeout-minutes: 100
          run: |
-            sudo -E apt-get -qq update
             sudo -E apt-get -qq install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex bison ccache openjdk-8-jdk
             sudo -E apt-get install expect
             docker rmi `docker images -q`
