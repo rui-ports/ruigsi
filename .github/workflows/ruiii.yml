@@ -65,6 +65,8 @@ jobs:
          continue-on-error: true
          timeout-minutes: 1
          run: |
+              git config --global user.name "rui-ports"
+              git config --global user.email "secrets.EMAILGIT"
               mkdir hehehe &&cd hehehe
               git clone https://github.com/rui-ports/ruigsi.git hehehe
               cd hehehe
